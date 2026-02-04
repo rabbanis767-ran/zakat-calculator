@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zakat Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-wrapper">
+
+    <header class="app-header">
+        <div class="bismillah-full">
+            <div class="arabic">بسم الله الرحمن الرحيم</div>
+            <div class="transliteration">Bismillahir Rahmanir Rahim</div>
+        </div>
+        <h1>Zakat Calculator</h1>
+        <p class="subtitle">Calculate your Zakat with clarity and responsibility</p>
+    </header>
+
+    <div class="card">
+        <h3>💰 Assets</h3>
+        <input type="number" id="cash" placeholder="Cash in hand (₹) e.g. 20000">
+        <input type="number" id="bank" placeholder="Bank balance (₹) e.g. 20000">
+    </div>
+
+    <div class="card">
+        <h3>📊 Today's Prices</h3>
+        <input type="number" id="goldPrice" placeholder="Gold price per gram (₹) e.g. 6200">
+        <input type="number" id="silverPrice" placeholder="Silver price per gram (₹) e.g. 75">
+    </div>
+
+    <div class="card">
+        <h3>🪙 Gold & Silver Owned</h3>
+        <input type="number" id="goldGrams" placeholder="Gold owned (grams) e.g. 10">
+        <input type="number" id="silverGrams" placeholder="Silver owned (grams) e.g. 100">
+    </div>
+
+    <div class="card">
+        <h3>📉 Liabilities</h3>
+        <input type="number" id="debts" placeholder="Total debts (₹) e.g. 5000">
+    </div>
+
+    <div class="card">
+        <h3>⚖️ Nisab Type</h3>
+        <select id="nisabType">
+            <option value="silver">Silver Nisab (Recommended)</option>
+            <option value="gold">Gold Nisab</option>
+        </select>
+        <p class="nisab-note">
+            <strong>Nisab</strong> is the minimum amount of wealth a Muslim must own
+            for Zakat to become obligatory. It is calculated based on the
+            <strong>total value</strong> of your eligible assets including
+            <strong>cash, bank balance, gold, and silver</strong>.<br><br>
+            <strong>Silver Nisab:</strong> Value of 612.36 grams of silver<br>
+            <strong>Gold Nisab:</strong> Value of 87.48 grams of gold<br><br>
+            Silver Nisab is commonly recommended as it lowers the threshold
+            and allows more people in need to benefit.
+        </p>
+    </div>
+
+    <button class="calculate-btn" onclick="calculateZakat()">Calculate Zakat</button>
+
+    <div id="result" class="result-box" style="display:none;"></div>
+
+    <footer class="footer">
+        Built with sincerity 🤍 to help fulfill your obligation<br>
+        <span class="publisher">Published by Shaik Rabbani</span>
+    </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
