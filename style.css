@@ -1,19 +1,239 @@
-* { box-sizing: border-box; }
-body { margin: 0; font-family: "Segoe UI", sans-serif; background: radial-gradient(circle at top, #e6f5ec, #f4f7f6); padding: 20px; }
-.app-wrapper { max-width: 540px; margin: auto; background: #ffffff; border-radius: 22px; padding: 25px; box-shadow: 0 25px 50px rgba(0,0,0,0.15); }
-.app-header { text-align: center; margin-bottom: 25px; }
-.bismillah-full .arabic { font-size: 26px; color: #0a7d35; font-weight: bold; line-height: 1.2; }
-.bismillah-full .transliteration { font-size: 16px; color: #555; margin-top: 4px; }
-h1 { margin: 6px 0; color: #0a7d35; }
-.subtitle { font-size: 14px; color: #555; }
-.card { background: linear-gradient(135deg, #f8fbf9, #edf6f1); border-radius: 16px; padding: 18px; margin-bottom: 15px; border-left: 5px solid #0a7d35; }
-.card h3 { margin: 0 0 12px; font-size: 16px; color: #222; }
-input, select { width: 100%; padding: 12px; margin-top: 8px; border-radius: 12px; border: 1px solid #cfdad4; font-size: 14px; }
-input:focus, select:focus { outline: none; border-color: #0a7d35; box-shadow: 0 0 0 2px rgba(10,125,53,0.15); }
-.nisab-note { font-size: 13px; color: #555; margin-top: 12px; line-height: 1.5; }
-.calculate-btn { width: 100%; padding: 16px; margin-top: 12px; background: linear-gradient(135deg, #0a7d35, #12b76a); color: white; border: none; border-radius: 16px; font-size: 17px; font-weight: bold; cursor: pointer; transition: transform 0.15s ease, box-shadow 0.15s ease; }
-.calculate-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(18,183,106,0.45); }
-.result-box { margin-top: 22px; padding: 20px; border-radius: 16px; background: linear-gradient(135deg, #e8f9ef, #dcf3e7); color: #0a7d35; text-align: center; font-size: 16px; font-weight: bold; min-height: 48px; }
-.footer { margin-top: 28px; text-align: center; font-size: 12px; color: #777; }
-.publisher { font-size: 12px; color: #555; margin-top: 6px; display: inline-block; }
-@media screen and (max-width: 600px) { .app-wrapper { padding: 15px; } input, select, .calculate-btn { font-size: 15px; padding: 10px; } }
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top, #e6f5ec, #f4f7f6);
+    padding: 20px;
+}
+
+.app-wrapper {
+    max-width: 540px;
+    margin: auto;
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 25px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.app-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.bismillah-full .arabic {
+    font-size: 26px;
+    color: #0a7d35;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.bismillah-full .transliteration {
+    font-size: 16px;
+    color: #555;
+    margin-top: 4px;
+}
+
+.bismillah-full .author {
+    font-size: 16px;
+    color: #000;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+h1 {
+    margin: 12px 0 6px 0;
+    color: #0a7d35;
+    font-size: 28px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #555;
+}
+
+.card {
+    background: linear-gradient(135deg, #f8fbf9, #edf6f1);
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 15px;
+    border-left: 5px solid #0a7d35;
+}
+
+.card h3 {
+    margin: 0 0 12px;
+    font-size: 16px;
+    color: #222;
+}
+
+.eligibility-guide {
+    background: linear-gradient(135deg, #f0f9f7, #e8f5f0);
+    border-left: 5px solid #0891b2;
+}
+
+.eligibility-guide h3 {
+    color: #0891b2;
+}
+
+.eligibility-guide h4 {
+    margin: 10px 0 8px 0;
+    font-size: 14px;
+}
+
+.eligible-section {
+    background: #d1fae5;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border-left: 4px solid #10b981;
+}
+
+.eligible-section h4 {
+    color: #065f46;
+    margin-top: 0;
+}
+
+.eligible-section ul {
+    margin: 8px 0;
+    padding-left: 20px;
+    font-size: 13px;
+    color: #047857;
+}
+
+.eligible-section li {
+    margin: 5px 0;
+}
+
+.not-eligible-section {
+    background: #fee2e2;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border-left: 4px solid #ef4444;
+}
+
+.not-eligible-section h4 {
+    color: #7f1d1d;
+    margin-top: 0;
+}
+
+.not-eligible-section ul {
+    margin: 8px 0;
+    padding-left: 20px;
+    font-size: 13px;
+    color: #991b1b;
+}
+
+.not-eligible-section li {
+    margin: 5px 0;
+}
+
+.assets-info {
+    background: #fef3c7;
+    padding: 12px;
+    border-radius: 10px;
+    border-left: 4px solid #f59e0b;
+}
+
+.assets-info h4 {
+    color: #92400e;
+    margin-top: 0;
+}
+
+.assets-info p {
+    margin: 6px 0;
+    font-size: 13px;
+    color: #78350f;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 12px;
+    border: 1px solid #cfdad4;
+    font-size: 14px;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #0a7d35;
+    box-shadow: 0 0 0 2px rgba(10, 125, 53, 0.15);
+}
+
+.field-note {
+    font-size: 12px;
+    color: #666;
+    margin: 5px 0 12px 0;
+    line-height: 1.4;
+    font-style: italic;
+}
+
+.nisab-note {
+    font-size: 13px;
+    color: #555;
+    margin-top: 12px;
+    line-height: 1.5;
+}
+
+.calculate-btn {
+    width: 100%;
+    padding: 16px;
+    margin-top: 12px;
+    background: linear-gradient(135deg, #0a7d35, #12b76a);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.calculate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(18, 183, 106, 0.45);
+}
+
+.result-box {
+    margin-top: 22px;
+    padding: 20px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #e8f9ef, #dcf3e7);
+    color: #0a7d35;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    min-height: 48px;
+}
+
+.footer {
+    margin-top: 28px;
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+}
+
+.publisher {
+    font-size: 12px;
+    color: #555;
+    margin-top: 6px;
+    display: inline-block;
+}
+
+@media screen and (max-width: 600px) {
+    .app-wrapper {
+        padding: 15px;
+    }
+
+    input,
+    select,
+    .calculate-btn {
+        font-size: 15px;
+        padding: 10px;
+    }
+}

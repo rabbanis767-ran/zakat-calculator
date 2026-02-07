@@ -30,50 +30,118 @@
             <div class="bismillah-full">
                 <div class="arabic">بسم الله الرحمن الرحيم</div>
                 <div class="transliteration">Bismillahir Rahmanir Rahim</div>
+                <div class="author">Shaik Rabbani</div>
             </div>
-            <h1>Shaik Rabbani Zakat Calculator</h1>
-            <h2>Shaik Rabbani Zakat Calculator</h2>
+            <h1>Zakat Calculator</h1>
             <p class="subtitle">Calculate your Zakat with clarity and responsibility</p>
         </header>
 
+        <div class="card eligibility-guide">
+            <h3>📋 Who is Eligible for Zakat?</h3>
+            <div class="eligibility-content">
+                <div class="eligible-section">
+                    <h4>✅ YOU ARE ELIGIBLE IF:</h4>
+                    <ul>
+                        <li>Your net wealth exceeds the <strong>Nisab</strong> (minimum threshold)</li>
+                        <li>You have owned this wealth for at least <strong>one lunar year (Hawl)</strong></li>
+                        <li>The wealth is surplus to your basic needs</li>
+                    </ul>
+                </div>
+                <div class="not-eligible-section">
+                    <h4>❌ YOU ARE NOT ELIGIBLE IF:</h4>
+                    <ul>
+                        <li>Your net wealth is <strong>below Nisab</strong></li>
+                        <li>You haven't completed one lunar year of ownership</li>
+                        <li>The wealth is needed for essential living expenses</li>
+                    </ul>
+                </div>
+                <div class="assets-info">
+                    <h4>📊 What Counts in This Calculator?</h4>
+                    <p><strong>INCLUDED (Zakat-eligible):</strong> Cash, bank balance, gold, silver, business inventory,
+                        investments/shares, investment property, rental income</p>
+                    <p><strong>NOT INCLUDED:</strong> Your home (personal residence), personal vehicles, furniture,
+                        clothing, tools for profession</p>
+                </div>
+            </div>
+        </div>
+
         <div class="card">
             <h3>💰 Assets</h3>
-            <input type="number" id="cash" placeholder="Cash in hand (₹) e.g. 20000">
-            <input type="number" id="bank" placeholder="Bank balance (₹) e.g. 20000">
+            <div>
+                <input type="number" id="cash" placeholder="Cash in hand (₹) e.g. 20000">
+                <p class="field-note">Money in your wallet, purse, or at home</p>
+            </div>
+            <div>
+                <input type="number" id="bank" placeholder="Bank balance (₹) e.g. 20000">
+                <p class="field-note">Total amount in all your bank accounts</p>
+            </div>
+            <div>
+                <input type="number" id="businessStock" placeholder="Business Stock/Inventory (₹) e.g. 50000">
+                <p class="field-note">Value of goods/products held for business sale</p>
+            </div>
+            <div>
+                <input type="number" id="investments" placeholder="Investments/Shares Value (₹) e.g. 100000">
+                <p class="field-note">Current market value of stocks, bonds, mutual funds, and other securities</p>
+            </div>
+            <div>
+                <input type="number" id="rentalIncome" placeholder="Saved Rental Income (₹) e.g. 15000">
+                <p class="field-note">Rental income earned and saved (not including recent month's income if you need it
+                    for living)</p>
+            </div>
+            <div>
+                <input type="number" id="investmentProperty" placeholder="Investment Property Value (₹) e.g. 500000">
+                <p class="field-note">Market value of property purchased for resale or investment (NOT your primary
+                    residence)</p>
+            </div>
         </div>
 
         <div class="card">
             <h3>📊 Today's Prices</h3>
-            <input type="number" id="goldPrice" placeholder="Gold price per gram (₹) e.g. 6200">
-            <input type="number" id="silverPrice" placeholder="Silver price per gram (₹) e.g. 75">
+            <div>
+                <input type="number" id="goldPrice" placeholder="Gold price per gram (₹) e.g. 6200">
+                <p class="field-note">Current market rate of gold per gram (check IBJA or local market)</p>
+            </div>
+            <div>
+                <input type="number" id="silverPrice" placeholder="Silver price per gram (₹) e.g. 75">
+                <p class="field-note">Current market rate of silver per gram (usually cheaper than gold)</p>
+            </div>
         </div>
 
         <div class="card">
             <h3>🪙 Gold & Silver Owned</h3>
-            <input type="number" id="goldGrams" placeholder="Gold owned (grams) e.g. 10">
-            <input type="number" id="silverGrams" placeholder="Silver owned (grams) e.g. 100">
+            <div>
+                <input type="number" id="goldGrams" placeholder="Gold owned (grams) e.g. 10">
+                <p class="field-note">Total gold you own (jewelry, bangles, coins, etc.)</p>
+            </div>
+            <div>
+                <input type="number" id="silverGrams" placeholder="Silver owned (grams) e.g. 100">
+                <p class="field-note">Total silver you own (coins, jewelry, utensils, etc.)</p>
+            </div>
         </div>
 
         <div class="card">
             <h3>📉 Liabilities</h3>
-            <input type="number" id="debts" placeholder="Total debts (₹) e.g. 5000">
+            <div>
+                <input type="number" id="debts" placeholder="Total debts (₹) e.g. 5000">
+                <p class="field-note">Money you owe to others (loans, credit cards, mortgages, etc.)</p>
+            </div>
         </div>
 
         <div class="card">
-            <h3>⚖️ Nisab Type</h3>
+            <h3>⚖️ Nisab Threshold</h3>
             <select id="nisabType">
                 <option value="silver">Silver Nisab (Recommended)</option>
                 <option value="gold">Gold Nisab</option>
             </select>
             <p class="nisab-note">
-                <strong>Nisab</strong> is the minimum amount of wealth a Muslim must own
-                for Zakat to become obligatory. It is calculated based on the
-                <strong>total value</strong> of your eligible assets including
-                <strong>cash, bank balance, gold, and silver</strong>.<br><br>
-                <strong>Silver Nisab:</strong> Value of 612.36 grams of silver<br>
-                <strong>Gold Nisab:</strong> Value of 87.48 grams of gold<br><br>
-                Silver Nisab is commonly recommended as it lowers the threshold
-                and allows more people in need to benefit.
+                <strong>What is Nisab?</strong><br>
+                Nisab is the <strong>minimum wealth threshold</strong> you must reach to be eligible for Zakat. If your
+                net wealth is <strong>below</strong> this amount, you are <strong>NOT obligated to pay Zakat</strong>.
+                If your net wealth is <strong>equal to or above</strong> this amount, you <strong>ARE eligible</strong>
+                to pay Zakat (2.5%).<br><br>
+                <strong>📌 Silver Nisab (Recommended):</strong> Value of 612.36 grams of silver<br>
+                <strong>📌 Gold Nisab:</strong> Value of 87.48 grams of gold<br><br>
+                <em>Silver Nisab is recommended because it's more inclusive and helps more people in need.</em>
             </p>
         </div>
 
